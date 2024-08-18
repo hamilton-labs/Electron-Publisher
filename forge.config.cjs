@@ -3,8 +3,9 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
   packagerConfig: {
-    // set config executableName
-    productName: "Hamilton Labs",
+    name: 'Hamilton Labs',
+    productName: 'Hamilton Labs',
+    appname: 'Hamilton Labs',
     asar: true,
     icon: './assets/images/icon',
     darwinDarkModeSupport: true,
@@ -34,20 +35,15 @@ module.exports = {
     {
       name: '@electron-forge/maker-dmg',
       config: {
-        name: 'Hamilton Labs Installer',
+        overwrite: true,
+        title: 'Hamilton Labs Installer',
+        name: "Hamilton Labs Installer",
         icon: './assets/images/icon.icns',
-        'icon-size': 100,
-        background: './assets/images/Installer-bg.png',
+        iconSize: 50,
         format: 'ULFO',
         overwrite: true,
-        DMGContents: {
-          x: 620,
-          y: 150,
-          type: 'position',
-          path: 'out/Hamilton Labs-darwin-x64/Hamilton Labs.app'
-        },
+      }
       },
-    },
     // {
     //   name: '@electron-forge/maker-zip',
     //   platforms: ['darwin','linux'],
